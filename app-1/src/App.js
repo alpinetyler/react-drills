@@ -1,30 +1,28 @@
-import React, { Component } from "react";
-import "./App.css";
+import React, {Component} from 'react'
 
-class App extends Component {
-  
+export default class App extends Component {
   constructor(props){
-    super(props)
+    super()
 
     this.state = {
-      message: ''
+       myTypedWords: ''
     }
   }
 
-  handleChange(value){
-    this.setState({message: value})
+  doTheChanges = (theText) => {
+    this.setState({
+      myTypedWords: theText
+    })
   }
 
 
   render(){
     return(
-      <div className="App">
-        <input onChange={e => this.handleChange(e.target.value)} type='text'/>
-        <p>{this.state.message}</p>
-      </div>
+      <section className="App">
+        <input type="text" onChange={(e) => this.doTheChanges(e.target.value)}/>
+        <h1>{this.state.myTypedWords}</h1>
+
+      </section>
     )
   }
-   
 }
-
-export default App;
