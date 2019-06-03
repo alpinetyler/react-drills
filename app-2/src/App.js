@@ -1,25 +1,26 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React, {Component} from 'react'
+import ('./App.css')
 
-class App extends Component {
-  constructor(){
+export default class App extends Component{
+  constructor(props){
     super()
 
     this.state = {
-        list: ['this', 'is', 'the', 'array', 'to', 'display']
+       myList: ["why", "oh", "why", "is", "this", "more", "difficult", "than", "it", "looks", "?"]
     }
   }
 
   render(){
-     let list = this.state.list.map((element, index)=> {
-        return <h2 key={index}>{element}</h2>
-      })
-    
+    let displayList = this.state.myList.map((element, index) => {
 
-       return <div className="App">{list}</div>
-    
+      return <h3 id={index}>{element}</h3>
+    })
+
+
+    return(
+      <section className="App">
+        {displayList}
+      </section>
+    )
   }
 }
-
-export default App;
