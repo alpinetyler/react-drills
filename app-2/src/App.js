@@ -1,25 +1,28 @@
 import React, {Component} from 'react'
-import ('./App.css')
+import './App.css'
 
-export default class App extends Component{
+
+export default class App extends Component {
   constructor(props){
     super()
 
     this.state = {
-       myList: ["why", "oh", "why", "is", "this", "more", "difficult", "than", "it", "looks", "?"]
+      theList: ["me", "you", "us", "for", "to", "forever", "hello", "what"]
     }
   }
 
-  render(){
-    let displayList = this.state.myList.map((element, index) => {
 
-      return <h3 id={index}>{element}</h3>
+
+
+  render(){
+    let forever = this.state.theList.map((element, index) => {
+      return <h2 id={index}>{element}</h2>
     })
 
 
     return(
       <section className="App">
-        {displayList}
+        {forever}
       </section>
     )
   }
