@@ -29,7 +29,7 @@ export default class App extends Component{
     })
     return(
       <section>
-          <input classname="App" onChange={e => this.getString(e.target.value)}/>
+          <input className="App" onChange={e => this.getString(e.target.value)}/>
         
        {afterFilter}
       </section>
