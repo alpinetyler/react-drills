@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 
-export default class Login extends Component {
-    constructor(props) {
+export default class Login extends Component{
+    constructor(props){
         super()
 
         this.state = {
@@ -10,28 +10,30 @@ export default class Login extends Component {
         }
     }
 
-    userName = (username) =>{
+    changeUsername(username){
         this.setState({
             username: username
+           
         })
     }
 
-    passWord = (password) =>{
+    changePassword(password){
         this.setState({
             password: password
+            
         })
     }
 
     handleClick = () => {
-        alert(`UserName: ${this.state.username} Password: ${this.state.password}`)
+        alert(`Username is: ${this.state.username} Password is: ${this.state.password}`)
     }
-    
 
-    render() {
-        return (
+
+    render(){
+        return(
             <div>
-                <input onChange={e => this.userName(e.target.value)} placeholder="Enter Username" />
-                <input onChange={e => this.passWord(e.target.value)}  placeholder="Enter Password"/>
+                <input type="text" placeholder="enter Username" onChange={e => this.changeUsername(e.target.value)} />
+                <input type="text" placeholder="enter Password" onChange={e => this.changePassword(e.target.value)} />
                 <button onClick={this.handleClick}>Login</button>
 
             </div>
