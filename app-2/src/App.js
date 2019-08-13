@@ -1,29 +1,32 @@
 import React, {Component} from 'react'
 import './App.css'
 
+export default class App extends Component{
 
-export default class App extends Component {
   constructor(props){
-    super()
-
+    super(props)
     this.state = {
-      theList: ["me", "you", "us", "for", "to", "forever", "hello", "what"]
+      list: ['hello', 'this', 'is', 'the', 'list']
     }
   }
 
 
-
-
   render(){
-    let forever = this.state.theList.map((element, index) => {
-      return <h2 id={index}>{element}</h2>
-    })
-
-
     return(
-      <section className="App">
-        {forever}
-      </section>
+      <div className="App">
+    
+        {this.state.list.map((item) => {
+          return <h1 style={styles.test}>{item}</h1>
+        })}
+      
+        
+      </div>
     )
+  }
+}
+
+let styles = {
+  test: {
+    fontFamily: 'Apple-Chancery'
   }
 }

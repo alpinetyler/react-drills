@@ -1,28 +1,40 @@
 import React, {Component} from 'react'
+import './App.css'
 
 export default class App extends Component {
   constructor(props){
-    super()
+    super(props)
 
     this.state = {
-       myTypedWords: ''
+      text: ''
     }
   }
 
-  doTheChanges = (theText) => {
+  handleChange(text){
     this.setState({
-      myTypedWords: theText
+      text: text
     })
   }
 
-
   render(){
     return(
-      <section className="App">
-        <input type="text" onChange={(e) => this.doTheChanges(e.target.value)}/>
-        <h1>{this.state.myTypedWords}</h1>
+      <div className="App">
+        <h3>Enter Text Here:</h3>
+        <input
+        type="text"
+        name="text"
+        onChange={ e => this.handleChange(e.target.value)} />
 
-      </section>
+        <div style={styles.test}>{this.state.text}</div>
+      </div>
     )
+  }
+}
+
+let styles = {
+  test: {
+    fontSize: '300px',
+    fontFamily: "Apple-Chancery"
+    
   }
 }

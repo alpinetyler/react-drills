@@ -18,7 +18,10 @@ export default class Todo extends Component{
     }
 
     handleClick = () => {
+
+        console.log(this.state.todolist)
         this.setState({
+           
             todolist: [...this.state.todolist, this.state.task],
             task: ''
         })
