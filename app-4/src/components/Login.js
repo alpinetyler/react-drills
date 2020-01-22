@@ -1,24 +1,29 @@
-import React, {Component} from 'react'
+import React, {Component} from "react";
 
-export default class Login extends Component {
-    constructor(props){
-        super(props)
+export default class Login extends Component{
+    constructor(){
+        super();
 
         this.state = {
             username: '',
             password: ''
         }
+
     }
 
-    handleChange = (e) => {
+    handleChange = e => {
         let {value, name} = e.target
         this.setState({
             [name]: value
         })
     }
 
-    handleClick = () => {
-        alert(`Username: ${this.state.username} Password: ${this.state.password}`)
+    handleLogin = () => {
+        alert(`Your username is '${this.state.username}' and your password is '${this.state.password}'`)
+        this.setState({
+            username: '',
+            password: ''
+          })
     }
 
 
@@ -26,22 +31,24 @@ export default class Login extends Component {
     render(){
         return(
             <div>
-                <input 
-                    type="text"
-                    name="username"
-                    placeholder="UserName"
-                    value={this.state.username}
-                    onChange={this.handleChange}/>
-                 <input 
-                    type="text"
-                    name="password"
-                    placeholder="password"
-                    onChange={this.handleChange}
-                    value={this.state.password}/>
-                <button onClick={this.handleClick}>Save</button>
-                
-            </div>
+            <input
+            type="text"
+            name="username"
+            onChange={this.handleChange}
+            placeholder="Enter a Username" 
+            value={this.state.username}/>
+            <p>
+            <input
+            type="text"
+            name="password"
+            onChange={this.handleChange}
+            placeholder="Enter a Password"
+            value={this.state.password} /> 
+            </p>
+            <button onClick={this.handleLogin}>Login</button>
+        </div>
         )
-        
     }
+        
+        
 }

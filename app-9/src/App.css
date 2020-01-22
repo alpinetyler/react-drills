@@ -18,6 +18,18 @@
   font-size: large;
 }
 
+.foo{
+  text-decoration: none;
+  font-size: 20px;
+  /* font-family: 'times'; */
+  letter-spacing: 1px;
+  word-spacing: 50px;
+}
+
+.foo:hover{
+  color: orange;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

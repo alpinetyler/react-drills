@@ -1,15 +1,16 @@
-import React, { Component } from "react";
-import "./App.css";
-import Image from './Image'
+import React, {Component} from "react";
+import './App.css';
 
-class App extends Component {
-  render() {
-    return (
+import Image from './Image';
+
+export default class App extends Component{
+
+  render(){
+    return(
       <div className="App">
-        <Image theImage='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6Nm9SjETK7VEz8t0jDwVYwc5-TMr9auSA8y9XzrhiLfaXT66zxA'/>
+        <Image myImage="https://www.wallpaperup.com/uploads/wallpapers/2014/12/27/567873/b3543e2dbf32e4e2718c0799e50367a5-700.jpg" />
       </div>
-    );
+    )
+    
   }
 }
-
-export default App;

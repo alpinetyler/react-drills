@@ -1,43 +1,34 @@
-import React, { Component } from 'react'
-import './App.css'
+import React, {Component} from "react";
+import './App.css';
 
-export default class App extends Component {
-  constructor(props) {
-    super(props)
+export default class App extends Component{
+
+  constructor(){
+    super()
+
     this.state = {
-      list: ["food", "drink", "merriment", "party", "dancing", "orchestra", "play"],
+      items: ["foo", "fool", "free", "falala", "moo", "move", "moot", "my", "meow", "foot"],
       filterString: ''
     }
   }
 
+  handleChange = filter => this.setState({ filterString: filter});
 
-
-  handleChange = (filter) => {
-    this.setState({
-      filterString: filter
+  render(){
+    let filteredList = this.state.items
+    .filter((element, index) => {
+      return element.includes(this.state.filterString);
     })
-  }
-
-
-
-
-  render() {
-    let listOfItems = this.state.list.filter((item, index) => {
-      return item.startsWith(this.state.filterString)
-    }).map((item, index) => {
-      return <h1 key={index}>{item}</h1>
+    .map((element, index) => {
+      return <h3 key={index}>{element}</h3>;
     })
-    return (
+    return(
       <div className="App">
-
         <input
           type="text"
-          name="filter"
-          onChange={e => this.handleChange(e.target.value)} />
-        <div>
-          {listOfItems}
-        </div>
-
+          placeholder="Enter word to filter"
+          onChange={e => this.handleChange(e.target.value)}/>
+        {filteredList}
       </div>
     )
   }

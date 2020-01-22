@@ -220,28 +220,50 @@ class Login extends Component {
 
     this.handleLogin = this.handleLogin.bind(this);
   }
+ 
+// my way of 
+// handleChange = e => {
+//         let {value, name} = e.target
+//         this.setState({
+//             [name]: value
+//         })
+//     }
 
+// their way of handling it
   handleUsernameChange(name) {
     this.setState({ username: name });
   }
 
+// their way of handling it
   handlePasswordChange(pass) {
     this.setState({ password: pass });
   }
 
-  handleLogin() {
-    alert(`Username: ${this.state.username} Password: ${this.state.password}`);
-  }
+  handleLogin = () => {
+        alert(`Your username is '${this.state.username}' and your password is '${this.state.password}'`)
+        this.setState({
+            username: '',
+            password: ''
+          })
+    }
 
   render() {
     return (
       <div>
         <input
           onChange={e => this.handleUsernameChange(e.target.value)}
+          // my way:
+          // name="username"
+          // onChange={this.handleChange}
+          // value={this.state.username}
           type="text"
         />
         <input
           onChange={e => this.handlePasswordChange(e.target.value)}
+          // my way:
+          // name="password"
+          // onChange={this.handleChange}
+          // value={this.state.username}
           type="text"
         />
         <button onClick={this.handleLogin}>Login</button>
@@ -301,7 +323,7 @@ export default class Image extends Component {
   render() {
     return (
       <div>
-        <img src={this.props.url} />
+        <img src={this.props.myImage} />
         <caption>Error 599</caption>
       </div>
     )

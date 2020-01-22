@@ -1,32 +1,18 @@
-import React, {Component} from 'react'
-import './App.css'
+import React, {Component} from "react";
+import "./App.css"
 
 export default class App extends Component{
+  constructor(){
+    super();
 
-  constructor(props){
-    super(props)
     this.state = {
-      list: ['hello', 'this', 'is', 'the', 'list']
+      items: ["This", "is", "the", "array", "of", "strings", "spoken", "of"]
     }
   }
-
-
   render(){
-    return(
-      <div className="App">
-    
-        {this.state.list.map((item) => {
-          return <h1 style={styles.test}>{item}</h1>
-        })}
-      
-        
-      </div>
-    )
-  }
-}
-
-let styles = {
-  test: {
-    fontFamily: 'Apple-Chancery'
+      let listOfItems = this.state.items.map((element, index)=>{
+        return <h3 key={index}>{element}</h3>;
+      })
+      return <div className="App"> {listOfItems} </div>;
   }
 }

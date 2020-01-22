@@ -1,40 +1,29 @@
-import React, {Component} from 'react'
-import './App.css'
+import React, {Component} from "react";
+import "./App.css";
 
-export default class App extends Component {
-  constructor(props){
-    super(props)
+export default class App extends Component{
+    constructor(){
+        super();
 
-    this.state = {
-      text: ''
+        this.state = {
+            message: ""
+        };
     }
-  }
 
-  handleChange(text){
-    this.setState({
-      text: text
-    })
-  }
+    handleChange = value => {
+        this.setState({message: value})
+    }
 
-  render(){
-    return(
-      <div className="App">
-        <h3>Enter Text Here:</h3>
-        <input
-        type="text"
-        name="text"
-        onChange={ e => this.handleChange(e.target.value)} />
+    render(){
+        return(
+            <section className="App" >
+                <input 
+                type="text"
+                placeholder="Enter Text Here" 
+                onChange={e => this.handleChange(e.target.value)}/>
+                <h1>{this.state.message}</h1>
+            </section>
 
-        <div style={styles.test}>{this.state.text}</div>
-      </div>
-    )
-  }
-}
-
-let styles = {
-  test: {
-    fontSize: '300px',
-    fontFamily: "Apple-Chancery"
-    
-  }
+        )
+    }
 }
