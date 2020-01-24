@@ -1,10 +1,9 @@
-import React, { Component } from "react";
-import "./App.css";
+import React, {Component} from "react";
+import "./App.css"
 import NewTask from "./components/NewTask"
 import List from "./components/List"
 
-class App extends Component {
-
+export default class App extends Component{
   constructor() {
     super();
 
@@ -12,21 +11,21 @@ class App extends Component {
       list: []
     };
 
+    
   }
 
-  handleAddTask = (task) => {
-    this.setState({ list: [...this.state.list, task] });
+  handleAddTask = task => {
+    this.setState({ 
+      list: [...this.state.list, task]
+    })
   }
-
-  render() {
-    return (
+  render(){
+    return(
       <div className="App">
-       <h1>My to-do List:</h1>
-       <NewTask add={this.handleAddTask}/>
-       <List tasks={this.state.list}/>
+        <h1>My Todo List</h1>
+        <NewTask add={this.handleAddTask} />
+        <List tasks={this.state.list} />
       </div>
-    );
+    )
   }
 }
-
-export default App;
