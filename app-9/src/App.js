@@ -1,26 +1,25 @@
 import React, { Component } from "react";
-import "./App.css";
+import "./App.css"
 
 import { Link } from "react-router-dom"
-import router from "./router";
+import router from "./router"
 
-class App extends Component {
-  render() {
-    return (
+export default class App extends Component{
+
+  render(){
+    return(
       <div className="App">
-       <nav>
-         <ul>
-           <Link className="foo" to="/">Home  </Link>
-           <Link className="foo" to="/signup">Signup  </Link>
-           <Link className="foo" to="/details">Details  </Link>
-         </ul>
-       </nav>
-       <br />
+        <nav>
+          <ul> 
+            <Link to="/" className="foo"> Home </Link>
+            <Link to="/signup" className="foo"> Signup< /Link>
+            <Link to="/details" className="foo"> Details </Link>
+          </ul>
+        </nav>
+        <br />
 
-       {router}
+        {router}
       </div>
-    );
+    )
   }
 }
-
-export default App;
