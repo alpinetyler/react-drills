@@ -1,35 +1,34 @@
 import React, {Component} from "react";
-import './App.css';
+import "./App.css";
 
 export default class App extends Component{
-
-  constructor(){
-    super()
+  constructor() {
+    super();
 
     this.state = {
-      items: ["foo", "fool", "free", "falala", "moo", "move", "moot", "my", "meow", "foot"],
-      filterString: ''
-    }
+      itemList: ["me", "may", "ma", "mo", "moo"],
+      filterString: ""
+    };
   }
 
-  handleChange = filter => this.setState({ filterString: filter});
+  handleChange = filter => {
+    this.setState({filterString: filter})
+  }
 
-  render(){
-    let filteredList = this.state.items
+  render() {
+    let itemsToDisplay = this.state.itemList
     .filter((element, index) => {
       return element.includes(this.state.filterString);
     })
     .map((element, index) => {
-      return <h3 key={index}>{element}</h3>;
-    })
-    return(
+      return <h2 key={index}>{element}</h2>;
+    });
+
+    return (
       <div className="App">
-        <input
-          type="text"
-          placeholder="Enter word to filter"
-          onChange={e => this.handleChange(e.target.value)}/>
-        {filteredList}
+        <input onChange={e => this.handleChange(e.target.value)} type="text" />
+        {itemsToDisplay}
       </div>
-    )
+    );
   }
 }
