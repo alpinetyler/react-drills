@@ -20,10 +20,10 @@
 
 .foo{
   text-decoration: none;
-  font-size: 20px;
+  font-size: 25px;
   /* font-family: 'times'; */
   letter-spacing: 1px;
-  word-spacing: 50px;
+  word-spacing: 25px;
 }
 
 .foo:hover{
