@@ -1,18 +1,20 @@
 import React, {Component} from "react";
-import "./App.css"
+import "./App.css";
 
 export default class App extends Component{
   constructor(){
     super();
 
     this.state = {
-      items: ["This", "is", "the", "array", "of", "strings", "spoken", "of"]
-    }
+      theList:["this", "is", "the", "list", "I", "was", "supposed", "to", "create"]
+    };
   }
-  render(){
-      let listOfItems = this.state.items.map((element, index)=>{
-        return <h3 key={index}>{element}</h3>;
-      })
-      return <div className="App"> {listOfItems} </div>;
+
+  render() {
+    let displayList = this.state.theList.map((element, index) => {
+      return <h2 key={index}>{element}</h2>
+    });
+    
+    return <div className="App">{displayList}</div>
   }
 }
