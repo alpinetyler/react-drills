@@ -7,21 +7,22 @@ export default class App extends Component {
 
         this.state = {
             message: ""
-        }
+        };
     }
 
     handleChange(value) {
-        this.setState({message: value })
+        this.setState({ message: value });
     }
 
     render() {
-        return (
-         <div className="App">
-             <input onChange={e => this.handleChange(e.target.value)} type="text" />
-             <p>{this.state.message}</p>
-         </div>
-        );
-        
+        return(
+            <div className="App">
+                <input 
+                type="text"
+                onChange={e=> this.handleChange(e.target.value)}
+                />
+                <p>{this.state.message}</p>
+            </div>
+        )
     }
-
 }
