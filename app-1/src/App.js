@@ -3,10 +3,10 @@ import "./App.css";
 
 export default class App extends Component {
     constructor() {
-        super();
+        super()
 
         this.state = {
-            message: ""
+            theWords: ""
         };
     }
 
@@ -14,14 +14,15 @@ export default class App extends Component {
         this.setState({ message: value });
     }
 
+
     render() {
-        return(
+        return (
             <div className="App">
                 <input 
-                type="text"
-                onChange={e=> this.handleChange(e.target.value)}
-                />
-                <p>{this.state.message}</p>
+                    type="text"
+                    onChange={e => this.handleChange(e.target.value)}
+                    />
+                    <p>{this.state.message}</p>
             </div>
         )
     }
