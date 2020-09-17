@@ -1,13 +1,13 @@
-import React, {Component} from "react"
+import React, {Component} from "react";
 
-export default class Image extends Component{
+export default class Image extends Component {
 
     render(){
         return(
-            <section>
-                <img width="500px" src={this.props.myImage} />
-                <h2>This is my cool P-51 Image!</h2>
-            </section>
+            <div>
+                <img src={this.props.myImage} alt="catconflict" />
+                <h1>Cat Error</h1>
+            </div>
         )
     }
 }
