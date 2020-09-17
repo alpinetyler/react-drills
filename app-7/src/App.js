@@ -1,31 +1,28 @@
 import React, {Component} from "react";
-import "./App.css"
-import NewTask from "./components/NewTask"
-import List from "./components/List"
+import"./App.css";
+import NewTask from "./components/NewTask";
+import List from "./components/List";
 
-export default class App extends Component{
+export default class App extends Component {
   constructor() {
     super();
 
     this.state = {
       list: []
-    };
-
-    
+    }
   }
 
-  handleAddTask = task => {
-    this.setState({ 
-      list: [...this.state.list, task]
-    })
+  handleAddTask = (task) => {
+    this.setState({ list: [...this.state.list, task]})
   }
-  render(){
+  
+  render() {
     return(
       <div className="App">
-        <h1>My Todo List</h1>
+        <h1>My To-Do List</h1>
         <NewTask add={this.handleAddTask} />
         <List tasks={this.state.list} />
       </div>
-    )
+    );
   }
 }
